@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pranav | Cyber Security Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{--bg:#020b07;--green:#00ff88;--green-dim:#00ff8844;--red:#ff2255;--white:#e8f5ee;--grey:#3a5c47;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none;}
+.cursor{position:fixed;width:10px;height:10px;background:var(--green);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:transform .1s;}
+.cursor-ring{position:fixed;width:34px;height:34px;border:1px solid var(--green);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.4;transition:all .15s ease;}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,136,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.12) 2px,rgba(0,0,0,.12) 4px);pointer-events:none;z-index:1;}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 8vw;z-index:2;}
+.tag{font-family:'Share Tech Mono',monospace;font-size:.75rem;color:var(--green);letter-spacing:.3em;text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:up .6s .2s forwards;}
+.tag span{color:var(--red);}
+.name{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,13vw,12rem);line-height:.9;opacity:0;animation:up .7s .4s forwards;}
+.name .outline{color:transparent;-webkit-text-stroke:1.5px var(--green);text-shadow:0 0 60px var(--green-dim);}
+.sub{font-family:'Share Tech Mono',monospace;font-size:clamp(.75rem,1.3vw,.95rem);color:var(--grey);margin-top:2rem;max-width:480px;line-height:1.9;min-height:2em;opacity:0;animation:up .7s .6s forwards;}
+.cta{margin-top:2.5rem;display:flex;gap:1.2rem;flex-wrap:wrap;opacity:0;animation:up .7s .8s forwards;}
+.btn{font-family:'Share Tech Mono',monospace;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;padding:.8rem 1.8rem;border:1px solid var(--green);color:var(--green);background:transparent;text-decoration:none;cursor:none;position:relative;overflow:hidden;transition:color .3s;}
+.btn::before{content:'';position:absolute;inset:0;background:var(--green);transform:translateX(-101%);transition:transform .3s ease;z-index:-1;}
+.btn:hover{color:var(--bg);}.btn:hover::before{transform:translateX(0);}
+.btn-g{border-color:var(--grey);color:var(--grey);}.btn-g::before{background:var(--grey);}.btn-g:hover{color:var(--bg);}
+.term{position:absolute;right:6vw;top:50%;transform:translateY(-50%);width:clamp(260px,26vw,380px);background:rgba(0,0,0,.65);border:1px solid var(--green-dim);font-family:'Share Tech Mono',monospace;font-size:.7rem;opacity:0;animation:fadeIn 1s 1.2s forwards;box-shadow:0 0 60px rgba(0,255,136,.07);backdrop-filter:blur(8px);}
+.tbar{background:rgba(0,255,136,.07);padding:.55rem 1rem;border-bottom:1px solid var(--green-dim);display:flex;align-items:center;gap:.4rem;}
+.dot{width:8px;height:8px;border-radius:50%;}
+.dr{background:#ff5f57;}.dy{background:#febc2e;}.dg{background:#28c840;}
+.ttitle{margin:0 auto;color:var(--grey);font-size:.6rem;}
+.tbody{padding:1.1rem;line-height:2;}
+.pr{color:var(--green);}.cmd{color:var(--white);}.out{color:var(--grey);}.hi{color:var(--green);}
+.stats{position:relative;z-index:2;border-top:1px solid rgba(0,255,136,.1);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));padding:3rem 8vw;gap:2rem;}
+.stat{opacity:0;animation:up .5s forwards;}
+.stat:nth-child(1){animation-delay:1s;}.stat:nth-child(2){animation-delay:1.1s;}.stat:nth-child(3){animation-delay:1.2s;}.stat:nth-child(4){animation-delay:1.3s;}
+.snum{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;color:var(--green);line-height:1;text-shadow:0 0 20px var(--green-dim);}
+.slbl{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-top:.3rem;}
+.section{position:relative;z-index:2;padding:5rem 8vw;}
+.sec-lbl{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.4em;color:var(--green);text-transform:uppercase;margin-bottom:.8rem;}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1;margin-bottom:3rem;}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1px;background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.07);}
+.card{background:var(--bg);padding:1.8rem 1.4rem;transition:background .3s;cursor:none;}
+.card:hover{background:rgba(0,255,136,.04);}
+.cicon{font-size:1.4rem;margin-bottom:.9rem;}
+.cname{font-family:'Share Tech Mono',monospace;font-size:.82rem;color:var(--green);margin-bottom:.4rem;}
+.cdesc{font-size:.75rem;color:var(--grey);line-height:1.6;}
+footer{position:relative;z-index:2;border-top:1px solid rgba(0,255,136,.1);padding:2rem 8vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+footer p{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--grey);letter-spacing:.1em;}
+footer p span{color:var(--green);}
+.glitch{position:relative;}
+.glitch::before,.glitch::after{content:attr(data-text);position:absolute;left:0;top:0;width:100%;height:100%;}
+.glitch::before{color:var(--red);animation:g1 4s infinite;clip-path:polygon(0 0,100% 0,100% 33%,0 33%);}
+.glitch::after{color:var(--green);animation:g2 4s infinite;clip-path:polygon(0 67%,100% 67%,100% 100%,0 100%);}
+@keyframes up{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+@keyframes g1{0%,94%,100%{transform:none;opacity:0;}95%{transform:translate(-2px,1px);opacity:.7;}97%{transform:translate(2px,-1px);opacity:.7;}}
+@keyframes g2{0%,96%,100%{transform:none;opacity:0;}97%{transform:translate(2px,1px);opacity:.5;}99%{transform:translate(-2px,-1px);opacity:.5;}}
+@media(max-width:768px){.term{display:none;}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="ring"></div>
+<section class="hero">
+  <p class="tag">[ <span>root@localhost</span> ~]$ whoami</p>
+  <h1 class="name glitch" data-text="PRANAV">PRA<span class="outline">NAV</span></h1>
+  <p class="sub" id="typed"></p>
+  <div class="cta">
+    <a href="https://github.com/PM2003/pranav" class="btn" target="_blank">// View Repo</a>
+    <a href="https://github.com/PM2003" class="btn btn-g" target="_blank">// GitHub Profile</a>
+  </div>
+  <div class="term">
+    <div class="tbar"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="ttitle">bash — terminal</span></div>
+    <div class="tbody">
+      <div><span class="pr">➜ ~/recon</span> <span class="cmd">nmap -sV target.io</span></div>
+      <div class="out">Starting Nmap 7.94...</div>
+      <div class="out hi">22/tcp  open  ssh   OpenSSH 8.9</div>
+      <div class="out hi">80/tcp  open  http  nginx 1.22</div>
+      <div class="out hi">443/tcp open  https nginx 1.22</div>
+      <br/>
+      <div><span class="pr">➜ ~/recon</span> <span class="cmd">./exploit.py --target 443</span></div>
+      <div class="out">[*] Scanning for vulns...</div>
+      <div class="out hi">[+] CVE-2024-XXXX detected!</div>
+      <div class="out">[*] Reporting responsibly...</div>
+      <div class="out hi">[+] Hall of Fame incoming 🏆</div>
+      <br/>
+      <div><span class="pr">➜ ~/recon</span> <span class="cmd">▌</span></div>
+    </div>
+  </div>
+</section>
+<div class="stats">
+  <div class="stat"><div class="snum">100+</div><div class="slbl">Vulns Found</div></div>
+  <div class="stat"><div class="snum">50+</div><div class="slbl">CTF Challenges</div></div>
+  <div class="stat"><div class="snum">∞</div><div class="slbl">Curiosity Level</div></div>
+  <div class="stat"><div class="snum">0</div><div class="slbl">Black Hat Acts</div></div>
+</div>
+<section class="section">
+  <p class="sec-lbl">// Arsenal</p>
+  <h2 class="sec-title">Skill Set</h2>
+  <div class="grid">
+    <div class="card"><div class="cicon">🔍</div><div class="cname">Penetration Testing</div><div class="cdesc">Identifying and exploiting vulnerabilities before the bad guys do.</div></div>
+    <div class="card"><div class="cicon">🌐</div><div class="cname">Web App Security</div><div class="cdesc">OWASP Top 10, XSS, SQLi, SSRF, IDOR — hunting bugs across the web stack.</div></div>
+    <div class="card"><div class="cicon">🔐</div><div class="cname">Cryptography</div><div class="cdesc">Breaking weak implementations and building strong encryption strategies.</div></div>
+    <div class="card"><div class="cicon">🧠</div><div class="cname">Reverse Engineering</div><div class="cdesc">Decompiling, disassembling, understanding what the binary is really doing.</div></div>
+    <div class="card"><div class="cicon">🐚</div><div class="cname">Shell Scripting</div><div class="cdesc">Automating recon, enumeration, and exploitation with Bash and Python.</div></div>
+    <div class="card"><div class="cicon">🛡️</div><div class="cname">Ethical Hacking</div><div class="cdesc">Responsible disclosure, bug bounties, always staying on the right side.</div></div>
+  </div>
+</section>
+<footer>
+  <p>© 2026 <span>Pranav</span> — Ethical Hacker &amp; Security Researcher</p>
+  <p>Built with <span>Claude AI</span> &amp; a lot of <span>caffeine</span></p>
+</footer>
+<script>
+const cur=document.getElementById('cur'),ring=document.getElementById('ring');
+document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},80);});
+const phrases=['Cyber Security Researcher & Ethical Hacker.','Breaking things to make them stronger.','Turning coffee into CVEs since day one.','root@pranav:~$ find / -name vuln 2>/dev/null'];
+let pi=0,ci=0,del=false;
+const el=document.getElementById('typed');
+function type(){const cur=phrases[pi];if(!del){el.textContent=cur.slice(0,ci+1)+'|';ci++;if(ci===cur.length){del=true;setTimeout(type,2000);return;}}else{el.textContent=cur.slice(0,ci-1)+'|';ci--;if(ci===0){del=false;pi=(pi+1)%phrases.length;}}
+setTimeout(type,del?40:70);}
+setTimeout(type,1500);
+</script>
+</body>
+</html>
