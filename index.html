@@ -3,124 +3,313 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Pranav | Cyber Security Researcher</title>
-<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<title>Pranav Vijay Malkunaik | Cyber Security Specialist</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
-:root{--bg:#020b07;--green:#00ff88;--green-dim:#00ff8844;--red:#ff2255;--white:#e8f5ee;--grey:#3a5c47;}
+:root{--bg:#020b07;--bg2:#061209;--green:#00ff88;--green-dim:#00ff8830;--green-glow:#00ff8815;--red:#ff2255;--white:#e8f5ee;--grey:#4a7a5e;--grey2:#2a4035;}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;overflow-x:hidden;cursor:none;}
-.cursor{position:fixed;width:10px;height:10px;background:var(--green);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:transform .1s;}
-.cursor-ring{position:fixed;width:34px;height:34px;border:1px solid var(--green);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.4;transition:all .15s ease;}
-body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,136,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,.03) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;z-index:0;}
-body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.12) 2px,rgba(0,0,0,.12) 4px);pointer-events:none;z-index:1;}
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 8vw;z-index:2;}
-.tag{font-family:'Share Tech Mono',monospace;font-size:.75rem;color:var(--green);letter-spacing:.3em;text-transform:uppercase;margin-bottom:1.5rem;opacity:0;animation:up .6s .2s forwards;}
+.cursor{position:fixed;width:10px;height:10px;background:var(--green);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:left .05s,top .05s;}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid var(--green);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.35;transition:left .12s ease,top .12s ease;}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,255,136,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,136,.025) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;z-index:0;}
+body::after{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.1) 2px,rgba(0,0,0,.1) 4px);pointer-events:none;z-index:1;}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:.9rem 6vw;display:flex;justify-content:space-between;align-items:center;background:rgba(2,11,7,.85);border-bottom:1px solid var(--green-dim);backdrop-filter:blur(10px);}
+.nav-logo{font-family:'Share Tech Mono',monospace;font-size:.8rem;color:var(--green);letter-spacing:.15em;}
+.nav-links{display:flex;gap:2rem;}
+.nav-links a{font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);text-decoration:none;transition:color .2s;cursor:none;}
+.nav-links a:hover{color:var(--green);}
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:8rem 6vw 4rem;z-index:2;}
+.tag{font-family:'Share Tech Mono',monospace;font-size:.72rem;color:var(--green);letter-spacing:.3em;text-transform:uppercase;margin-bottom:1.2rem;opacity:0;animation:up .6s .2s forwards;}
 .tag span{color:var(--red);}
-.name{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,13vw,12rem);line-height:.9;opacity:0;animation:up .7s .4s forwards;}
-.name .outline{color:transparent;-webkit-text-stroke:1.5px var(--green);text-shadow:0 0 60px var(--green-dim);}
-.sub{font-family:'Share Tech Mono',monospace;font-size:clamp(.75rem,1.3vw,.95rem);color:var(--grey);margin-top:2rem;max-width:480px;line-height:1.9;min-height:2em;opacity:0;animation:up .7s .6s forwards;}
-.cta{margin-top:2.5rem;display:flex;gap:1.2rem;flex-wrap:wrap;opacity:0;animation:up .7s .8s forwards;}
-.btn{font-family:'Share Tech Mono',monospace;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;padding:.8rem 1.8rem;border:1px solid var(--green);color:var(--green);background:transparent;text-decoration:none;cursor:none;position:relative;overflow:hidden;transition:color .3s;}
+.name{font-family:'Bebas Neue',sans-serif;font-size:clamp(4rem,11vw,10.5rem);line-height:.88;opacity:0;animation:up .7s .35s forwards;}
+.name .outline{color:transparent;-webkit-text-stroke:1.5px var(--green);}
+.role{font-family:'Share Tech Mono',monospace;font-size:clamp(.8rem,1.5vw,1.1rem);color:var(--green);letter-spacing:.25em;text-transform:uppercase;margin-top:1.2rem;opacity:0;animation:up .6s .5s forwards;}
+.bio{font-size:clamp(.85rem,1.2vw,.95rem);color:var(--grey);margin-top:1.4rem;max-width:520px;line-height:1.85;opacity:0;animation:up .6s .65s forwards;}
+.cta{margin-top:2.5rem;display:flex;gap:1.2rem;flex-wrap:wrap;opacity:0;animation:up .6s .8s forwards;}
+.btn{font-family:'Share Tech Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;padding:.78rem 1.7rem;border:1px solid var(--green);color:var(--green);background:transparent;text-decoration:none;cursor:none;position:relative;overflow:hidden;transition:color .3s;}
 .btn::before{content:'';position:absolute;inset:0;background:var(--green);transform:translateX(-101%);transition:transform .3s ease;z-index:-1;}
 .btn:hover{color:var(--bg);}.btn:hover::before{transform:translateX(0);}
-.btn-g{border-color:var(--grey);color:var(--grey);}.btn-g::before{background:var(--grey);}.btn-g:hover{color:var(--bg);}
-.term{position:absolute;right:6vw;top:50%;transform:translateY(-50%);width:clamp(260px,26vw,380px);background:rgba(0,0,0,.65);border:1px solid var(--green-dim);font-family:'Share Tech Mono',monospace;font-size:.7rem;opacity:0;animation:fadeIn 1s 1.2s forwards;box-shadow:0 0 60px rgba(0,255,136,.07);backdrop-filter:blur(8px);}
-.tbar{background:rgba(0,255,136,.07);padding:.55rem 1rem;border-bottom:1px solid var(--green-dim);display:flex;align-items:center;gap:.4rem;}
-.dot{width:8px;height:8px;border-radius:50%;}
+.btn-o{border-color:var(--grey2);color:var(--grey);}
+.btn-o::before{background:var(--grey2);}
+.btn-o:hover{color:var(--white);}
+.contact-bar{display:flex;gap:1.5rem;flex-wrap:wrap;margin-top:2rem;opacity:0;animation:up .6s .95s forwards;}
+.contact-item{font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--grey);letter-spacing:.1em;display:flex;align-items:center;gap:.4rem;}
+.contact-item span{color:var(--green);font-size:.8rem;}
+.contact-item a{color:var(--grey);text-decoration:none;}
+.contact-item a:hover{color:var(--green);}
+.term{position:absolute;right:5vw;top:50%;transform:translateY(-40%);width:clamp(260px,24vw,360px);background:rgba(0,0,0,.7);border:1px solid var(--green-dim);font-family:'Share Tech Mono',monospace;font-size:.68rem;opacity:0;animation:fadeIn 1s 1.3s forwards;box-shadow:0 0 50px var(--green-glow);backdrop-filter:blur(8px);}
+.tbar{background:rgba(0,255,136,.06);padding:.5rem .9rem;border-bottom:1px solid var(--green-dim);display:flex;align-items:center;gap:.4rem;}
+.dot{width:7px;height:7px;border-radius:50%;}
 .dr{background:#ff5f57;}.dy{background:#febc2e;}.dg{background:#28c840;}
-.ttitle{margin:0 auto;color:var(--grey);font-size:.6rem;}
-.tbody{padding:1.1rem;line-height:2;}
+.ttitle{margin:0 auto;color:var(--grey);font-size:.58rem;}
+.tbody{padding:1rem;line-height:2.1;}
 .pr{color:var(--green);}.cmd{color:var(--white);}.out{color:var(--grey);}.hi{color:var(--green);}
-.stats{position:relative;z-index:2;border-top:1px solid rgba(0,255,136,.1);display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));padding:3rem 8vw;gap:2rem;}
+divider{display:block;height:1px;background:linear-gradient(90deg,var(--green-dim),transparent);margin:0 0;}
+.stats{position:relative;z-index:2;border-top:1px solid var(--green-dim);display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));padding:2.5rem 6vw;gap:2rem;}
 .stat{opacity:0;animation:up .5s forwards;}
-.stat:nth-child(1){animation-delay:1s;}.stat:nth-child(2){animation-delay:1.1s;}.stat:nth-child(3){animation-delay:1.2s;}.stat:nth-child(4){animation-delay:1.3s;}
-.snum{font-family:'Bebas Neue',sans-serif;font-size:3.2rem;color:var(--green);line-height:1;text-shadow:0 0 20px var(--green-dim);}
-.slbl{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-top:.3rem;}
-.section{position:relative;z-index:2;padding:5rem 8vw;}
-.sec-lbl{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.4em;color:var(--green);text-transform:uppercase;margin-bottom:.8rem;}
-.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1;margin-bottom:3rem;}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1px;background:rgba(0,255,136,.07);border:1px solid rgba(0,255,136,.07);}
-.card{background:var(--bg);padding:1.8rem 1.4rem;transition:background .3s;cursor:none;}
+.stat:nth-child(1){animation-delay:.9s;}.stat:nth-child(2){animation-delay:1s;}.stat:nth-child(3){animation-delay:1.1s;}.stat:nth-child(4){animation-delay:1.2s;}
+.snum{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--green);line-height:1;text-shadow:0 0 20px var(--green-dim);}
+.slbl{font-family:'Share Tech Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);margin-top:.25rem;}
+section{position:relative;z-index:2;padding:4.5rem 6vw;border-top:1px solid var(--green-dim);}
+.sec-lbl{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.4em;color:var(--green);text-transform:uppercase;margin-bottom:.7rem;}
+.sec-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4.5vw,4rem);line-height:1;margin-bottom:2.5rem;}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1px;background:var(--green-dim);border:1px solid var(--green-dim);}
+.card{background:var(--bg);padding:1.6rem 1.3rem;transition:background .3s;cursor:none;}
 .card:hover{background:rgba(0,255,136,.04);}
-.cicon{font-size:1.4rem;margin-bottom:.9rem;}
-.cname{font-family:'Share Tech Mono',monospace;font-size:.82rem;color:var(--green);margin-bottom:.4rem;}
-.cdesc{font-size:.75rem;color:var(--grey);line-height:1.6;}
-footer{position:relative;z-index:2;border-top:1px solid rgba(0,255,136,.1);padding:2rem 8vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
-footer p{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:var(--grey);letter-spacing:.1em;}
+.cicon{font-size:1.3rem;margin-bottom:.8rem;}
+.cname{font-family:'Share Tech Mono',monospace;font-size:.78rem;color:var(--green);margin-bottom:.35rem;}
+.cdesc{font-size:.73rem;color:var(--grey);line-height:1.6;}
+.timeline{display:flex;flex-direction:column;gap:0;}
+.tl-item{display:grid;grid-template-columns:140px 1fr;gap:2rem;padding:1.8rem 0;border-bottom:1px solid var(--grey2);}
+.tl-item:last-child{border-bottom:none;}
+.tl-year{font-family:'Share Tech Mono',monospace;font-size:.7rem;color:var(--green);letter-spacing:.1em;padding-top:.15rem;}
+.tl-content h3{font-family:'Share Tech Mono',monospace;font-size:.85rem;color:var(--white);margin-bottom:.25rem;}
+.tl-content p{font-size:.78rem;color:var(--grey);line-height:1.6;}
+.tl-content .badge{display:inline-block;font-family:'Share Tech Mono',monospace;font-size:.55rem;letter-spacing:.1em;padding:.2rem .6rem;border:1px solid var(--green-dim);color:var(--green);margin-top:.5rem;margin-right:.3rem;}
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1px;background:var(--green-dim);border:1px solid var(--green-dim);}
+.proj-card{background:var(--bg);padding:2rem 1.5rem;cursor:none;position:relative;overflow:hidden;transition:background .3s;}
+.proj-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--green);transition:height .3s;}
+.proj-card:hover{background:var(--bg2);}.proj-card:hover::before{height:100%;}
+.proj-num{font-family:'Bebas Neue',sans-serif;font-size:3rem;color:var(--green-dim);line-height:1;margin-bottom:.5rem;}
+.proj-name{font-family:'Share Tech Mono',monospace;font-size:.82rem;color:var(--green);margin-bottom:.5rem;}
+.proj-desc{font-size:.75rem;color:var(--grey);line-height:1.6;}
+.cert-list{display:flex;flex-wrap:wrap;gap:.7rem;}
+.cert{font-family:'Share Tech Mono',monospace;font-size:.65rem;letter-spacing:.08em;padding:.5rem 1rem;border:1px solid var(--green-dim);color:var(--grey);transition:all .2s;cursor:none;}
+.cert:hover{border-color:var(--green);color:var(--green);background:var(--green-glow);}
+.skills-wrap{display:flex;flex-wrap:wrap;gap:.6rem;}
+.skill-tag{font-family:'Share Tech Mono',monospace;font-size:.65rem;padding:.45rem 1rem;border:1px solid var(--grey2);color:var(--grey);letter-spacing:.08em;transition:all .2s;cursor:none;}
+.skill-tag:hover{border-color:var(--green);color:var(--green);}
+footer{position:relative;z-index:2;border-top:1px solid var(--green-dim);padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+footer p{font-family:'Share Tech Mono',monospace;font-size:.58rem;color:var(--grey);letter-spacing:.1em;}
 footer p span{color:var(--green);}
 .glitch{position:relative;}
 .glitch::before,.glitch::after{content:attr(data-text);position:absolute;left:0;top:0;width:100%;height:100%;}
-.glitch::before{color:var(--red);animation:g1 4s infinite;clip-path:polygon(0 0,100% 0,100% 33%,0 33%);}
-.glitch::after{color:var(--green);animation:g2 4s infinite;clip-path:polygon(0 67%,100% 67%,100% 100%,0 100%);}
-@keyframes up{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.glitch::before{color:var(--red);animation:g1 5s infinite;clip-path:polygon(0 0,100% 0,100% 33%,0 33%);}
+.glitch::after{color:var(--green);animation:g2 5s infinite;clip-path:polygon(0 67%,100% 67%,100% 100%,0 100%);}
+@keyframes up{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
-@keyframes g1{0%,94%,100%{transform:none;opacity:0;}95%{transform:translate(-2px,1px);opacity:.7;}97%{transform:translate(2px,-1px);opacity:.7;}}
-@keyframes g2{0%,96%,100%{transform:none;opacity:0;}97%{transform:translate(2px,1px);opacity:.5;}99%{transform:translate(-2px,-1px);opacity:.5;}}
-@media(max-width:768px){.term{display:none;}}
+@keyframes g1{0%,94%,100%{transform:none;opacity:0;}95%{transform:translate(-2px,1px);opacity:.6;}97%{transform:translate(2px,-1px);opacity:.6;}}
+@keyframes g2{0%,96%,100%{transform:none;opacity:0;}97%{transform:translate(2px,1px);opacity:.4;}99%{transform:translate(-2px,-1px);opacity:.4;}}
+@media(max-width:900px){.term{display:none;}.tl-item{grid-template-columns:1fr;gap:.5rem;}.nav-links{display:none;}}
 </style>
 </head>
 <body>
 <div class="cursor" id="cur"></div>
 <div class="cursor-ring" id="ring"></div>
-<section class="hero">
+
+<nav>
+  <div class="nav-logo">&gt; pm2003@github:~$</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+  </div>
+</nav>
+
+<section class="hero" id="about">
   <p class="tag">[ <span>root@localhost</span> ~]$ whoami</p>
   <h1 class="name glitch" data-text="PRANAV">PRA<span class="outline">NAV</span></h1>
-  <p class="sub" id="typed"></p>
-  <div class="cta">
-    <a href="https://github.com/PM2003/pranav" class="btn" target="_blank">// View Repo</a>
-    <a href="https://github.com/PM2003" class="btn btn-g" target="_blank">// GitHub Profile</a>
+  <p class="role">Vijay Malkunaik</p>
+  <p class="bio">Cybersecurity leader with experience heading the OWASP Student Chapter and Cyber Security Club. Proven skills in team management, event coordination, and technical leadership. Active member of IIT Bombay E-Cell Club.</p>
+  <div class="contact-bar">
+    <div class="contact-item"><span>&#9990;</span> 8830385038</div>
+    <div class="contact-item"><span>&#9993;</span> <a href="mailto:pranavmalkunaik171203@gmail.com">pranavmalkunaik171203@gmail.com</a></div>
+    <div class="contact-item"><span>&#9654;</span> <a href="https://github.com/PM2003" target="_blank">github.com/PM2003</a></div>
   </div>
+  <div class="cta">
+    <a href="https://github.com/PM2003" class="btn" target="_blank">// GitHub Profile</a>
+    <a href="mailto:pranavmalkunaik171203@gmail.com" class="btn btn-o">// Hire Me</a>
+  </div>
+
   <div class="term">
-    <div class="tbar"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="ttitle">bash — terminal</span></div>
+    <div class="tbar"><div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div><span class="ttitle">pranav@kali:~</span></div>
     <div class="tbody">
-      <div><span class="pr">➜ ~/recon</span> <span class="cmd">nmap -sV target.io</span></div>
-      <div class="out">Starting Nmap 7.94...</div>
-      <div class="out hi">22/tcp  open  ssh   OpenSSH 8.9</div>
-      <div class="out hi">80/tcp  open  http  nginx 1.22</div>
-      <div class="out hi">443/tcp open  https nginx 1.22</div>
+      <div><span class="pr">&#10145; ~</span> <span class="cmd">cat objective.txt</span></div>
+      <div class="out hi">[*] Seeking Cyber Security roles</div>
+      <div class="out">[*] OWASP Chapter Head</div>
+      <div class="out">[*] CGPA: 8.62 | B.E. CompE</div>
       <br/>
-      <div><span class="pr">➜ ~/recon</span> <span class="cmd">./exploit.py --target 443</span></div>
-      <div class="out">[*] Scanning for vulns...</div>
-      <div class="out hi">[+] CVE-2024-XXXX detected!</div>
-      <div class="out">[*] Reporting responsibly...</div>
-      <div class="out hi">[+] Hall of Fame incoming 🏆</div>
+      <div><span class="pr">&#10145; ~</span> <span class="cmd">ls certifications/</span></div>
+      <div class="out hi">NPTEL_CyberSec.cert</div>
+      <div class="out hi">Google_CyberSec.cert</div>
+      <div class="out hi">Cisco_CyberSec.cert</div>
+      <div class="out hi">RedHat.cert</div>
       <br/>
-      <div><span class="pr">➜ ~/recon</span> <span class="cmd">▌</span></div>
+      <div><span class="pr">&#10145; ~</span> <span class="cmd">&#9612;</span></div>
     </div>
   </div>
 </section>
+
 <div class="stats">
-  <div class="stat"><div class="snum">100+</div><div class="slbl">Vulns Found</div></div>
-  <div class="stat"><div class="snum">50+</div><div class="slbl">CTF Challenges</div></div>
-  <div class="stat"><div class="snum">∞</div><div class="slbl">Curiosity Level</div></div>
-  <div class="stat"><div class="snum">0</div><div class="slbl">Black Hat Acts</div></div>
+  <div class="stat"><div class="snum">8.62</div><div class="slbl">CGPA</div></div>
+  <div class="stat"><div class="snum">4+</div><div class="slbl">Certifications</div></div>
+  <div class="stat"><div class="snum">5+</div><div class="slbl">Projects Built</div></div>
+  <div class="stat"><div class="snum">3+</div><div class="slbl">Internships</div></div>
 </div>
-<section class="section">
+
+<section id="skills">
   <p class="sec-lbl">// Arsenal</p>
-  <h2 class="sec-title">Skill Set</h2>
-  <div class="grid">
-    <div class="card"><div class="cicon">🔍</div><div class="cname">Penetration Testing</div><div class="cdesc">Identifying and exploiting vulnerabilities before the bad guys do.</div></div>
-    <div class="card"><div class="cicon">🌐</div><div class="cname">Web App Security</div><div class="cdesc">OWASP Top 10, XSS, SQLi, SSRF, IDOR — hunting bugs across the web stack.</div></div>
-    <div class="card"><div class="cicon">🔐</div><div class="cname">Cryptography</div><div class="cdesc">Breaking weak implementations and building strong encryption strategies.</div></div>
-    <div class="card"><div class="cicon">🧠</div><div class="cname">Reverse Engineering</div><div class="cdesc">Decompiling, disassembling, understanding what the binary is really doing.</div></div>
-    <div class="card"><div class="cicon">🐚</div><div class="cname">Shell Scripting</div><div class="cdesc">Automating recon, enumeration, and exploitation with Bash and Python.</div></div>
-    <div class="card"><div class="cicon">🛡️</div><div class="cname">Ethical Hacking</div><div class="cdesc">Responsible disclosure, bug bounties, always staying on the right side.</div></div>
+  <h2 class="sec-title">Skills & Tools</h2>
+  <div class="skills-wrap">
+    <div class="skill-tag">Cyber Security</div>
+    <div class="skill-tag">VAPT & Tools</div>
+    <div class="skill-tag">Python</div>
+    <div class="skill-tag">C++</div>
+    <div class="skill-tag">OOP</div>
+    <div class="skill-tag">Kali Linux</div>
+    <div class="skill-tag">Ubuntu</div>
+    <div class="skill-tag">Debian</div>
+    <div class="skill-tag">TryHackMe</div>
+    <div class="skill-tag">Hack The Box</div>
+    <div class="skill-tag">CTF Competitions</div>
+    <div class="skill-tag">OWASP Top 10</div>
+    <div class="skill-tag">Penetration Testing</div>
+    <div class="skill-tag">Nmap / Burp Suite</div>
+    <div class="skill-tag">Team Leadership</div>
+    <div class="skill-tag">Communication</div>
   </div>
 </section>
+
+<section id="projects">
+  <p class="sec-lbl">// Builds</p>
+  <h2 class="sec-title">Projects</h2>
+  <div class="proj-grid">
+    <div class="proj-card">
+      <div class="proj-num">01</div>
+      <div class="proj-name">DDOS Detection & Mitigation</div>
+      <div class="proj-desc">Network-level detection and mitigation system for Distributed Denial of Service attacks using traffic analysis techniques.</div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-num">02</div>
+      <div class="proj-name">E-Commerce Website</div>
+      <div class="proj-desc">Full-stack e-commerce platform with secure authentication, payment integration, and admin dashboard.</div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-num">03</div>
+      <div class="proj-name">XMR Mining Silent Miner</div>
+      <div class="proj-desc">Research project analyzing silent cryptocurrency miner behavior for educational and malware analysis purposes.</div>
+    </div>
+    <div class="proj-card">
+      <div class="proj-num">04</div>
+      <div class="proj-name">Vulnerability Detection using LLMs</div>
+      <div class="proj-desc">Leveraging Large Language Models to automate vulnerability detection and security analysis in codebases.</div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <p class="sec-lbl">// Work</p>
+  <h2 class="sec-title">Experience</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">2024-2025</div>
+      <div class="tl-content">
+        <h3>Maxgen Technologies Pvt Ltd</h3>
+        <p>Python Development Intern — worked on real-world Python applications and cyber security-related tooling.</p>
+        <span class="badge">Python</span><span class="badge">Internship</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2024</div>
+      <div class="tl-content">
+        <h3>Infosys — Spring Boot Training</h3>
+        <p>Completed Infosys training program focused on Spring Boot framework and enterprise backend development.</p>
+        <span class="badge">Spring Boot</span><span class="badge">Java</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2023</div>
+      <div class="tl-content">
+        <h3>IBM Skill Build</h3>
+        <p>Completed IBM's Skill Build program, gaining industry-recognized knowledge in technology and security domains.</p>
+        <span class="badge">IBM</span><span class="badge">Cloud</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Ongoing</div>
+      <div class="tl-content">
+        <h3>OWASP Student Chapter — Head</h3>
+        <p>Leading the OWASP Student Chapter and Cyber Security Club. Organizing events, workshops, and technical sessions on web application security.</p>
+        <span class="badge">Leadership</span><span class="badge">OWASP</span><span class="badge">Community</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Ongoing</div>
+      <div class="tl-content">
+        <h3>IIT Bombay E-Cell — Active Member</h3>
+        <p>Active contributor to the IIT Bombay Entrepreneurship Cell, engaging in events and innovation-driven initiatives.</p>
+        <span class="badge">IIT Bombay</span><span class="badge">E-Cell</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="sec-lbl">// Credentials</p>
+  <h2 class="sec-title">Certifications & Events</h2>
+  <div class="cert-list">
+    <div class="cert">NPTEL Cyber Security</div>
+    <div class="cert">Google Cyber Security</div>
+    <div class="cert">Cisco Cyber Security</div>
+    <div class="cert">Red Hat</div>
+    <div class="cert">TryHackMe</div>
+    <div class="cert">VishwaCTF</div>
+    <div class="cert">Pentathon 2024</div>
+    <div class="cert">Pentathon 2025</div>
+    <div class="cert">SIH (Smart India Hackathon)</div>
+    <div class="cert">IDE BootCamp</div>
+  </div>
+</section>
+
+<section id="education">
+  <p class="sec-lbl">// Education</p>
+  <h2 class="sec-title">Academic Path</h2>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-year">2022 – 2025</div>
+      <div class="tl-content">
+        <h3>B.E. in Computer Engineering</h3>
+        <p>Savitribai Phule Pune University — Pursuing | CGPA: 8.62</p>
+        <span class="badge">Computer Engineering</span><span class="badge">CGPA 8.62</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2019 – 2022</div>
+      <div class="tl-content">
+        <h3>HSC — S.V. Union Junior College</h3>
+        <p>Higher Secondary Certificate, Pune.</p>
+        <span class="badge">Science Stream</span>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">2018 – 2019</div>
+      <div class="tl-content">
+        <h3>SSC — Agrasen High School</h3>
+        <p>Secondary School Certificate.</p>
+        <span class="badge">High School</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <p>© 2026 <span>Pranav</span> — Ethical Hacker &amp; Security Researcher</p>
-  <p>Built with <span>Claude AI</span> &amp; a lot of <span>caffeine</span></p>
+  <p>&copy; 2026 <span>Pranav Vijay Malkunaik</span> &mdash; Cyber Security Specialist</p>
+  <p>&#9990; <span>8830385038</span> &nbsp;|&nbsp; &#9993; <span>pranavmalkunaik171203@gmail.com</span></p>
 </footer>
+
 <script>
 const cur=document.getElementById('cur'),ring=document.getElementById('ring');
-document.addEventListener('mousemove',e=>{cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},80);});
-const phrases=['Cyber Security Researcher & Ethical Hacker.','Breaking things to make them stronger.','Turning coffee into CVEs since day one.','root@pranav:~$ find / -name vuln 2>/dev/null'];
-let pi=0,ci=0,del=false;
-const el=document.getElementById('typed');
-function type(){const cur=phrases[pi];if(!del){el.textContent=cur.slice(0,ci+1)+'|';ci++;if(ci===cur.length){del=true;setTimeout(type,2000);return;}}else{el.textContent=cur.slice(0,ci-1)+'|';ci--;if(ci===0){del=false;pi=(pi+1)%phrases.length;}}
-setTimeout(type,del?40:70);}
-setTimeout(type,1500);
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px';cur.style.top=e.clientY+'px';
+  setTimeout(()=>{ring.style.left=e.clientX+'px';ring.style.top=e.clientY+'px';},90);
+});
+document.querySelectorAll('a,button,.btn,.card,.proj-card,.cert,.skill-tag').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.transform='translate(-50%,-50%) scale(2.5)';ring.style.transform='translate(-50%,-50%) scale(1.5)';ring.style.opacity='.7';});
+  el.addEventListener('mouseleave',()=>{cur.style.transform='translate(-50%,-50%) scale(1)';ring.style.transform='translate(-50%,-50%) scale(1)';ring.style.opacity='.35';});
+});
 </script>
 </body>
 </html>
